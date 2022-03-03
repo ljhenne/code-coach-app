@@ -1,2 +1,3 @@
-# code-coach-app
+# Code Coach
+
 Django-based app.
