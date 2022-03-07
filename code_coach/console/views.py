@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Hey Kaley, I love you!!")
+    # latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    # context = {'latest_question_list': latest_question_list}
+    return render(request, 'console/index.html')
