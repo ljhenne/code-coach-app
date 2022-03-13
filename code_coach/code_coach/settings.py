@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+AUTH_USER_MODEL = 'console.User'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -112,9 +114,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
 SOCIAL_AUTH_AUTH0_DOMAIN = 'loganjhennessy.auth0.com'
-SOCIAL_AUTH_AUTH0_KEY = 'YOUR_CLIENT_ID'
-SOCIAL_AUTH_AUTH0_SECRET = 'YOUR_CLIENT_SECRET'
-
+SOCIAL_AUTH_AUTH0_KEY = os.getenv('SOCIAL_AUTH_AUTH0_KEY')
+SOCIAL_AUTH_AUTH0_SECRET = os.getenv('SOCIAL_AUTH_AUTH0_SECRET')
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
     'profile',
@@ -127,4 +128,5 @@ AUTHENTICATION_BACKENDS = {
 }
 
 LOGIN_URL = '/login/auth0'
-LOGIN_REDIRECT_URL = '/dashboard'
+LOGIN_REDIRECT_URL = '/console'
+LOGOUT_REDIRECT_URL = '/'

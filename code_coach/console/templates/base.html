@@ -11,24 +11,5 @@
           href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Code Coach</title>
 </head>
-<body>
-    <section class="hero is-small is-success mb-4">
-        <div class="hero-body">
-            <h1 class="title is-1">Code Coach</h1>
-            <p class="subtitle is-4">
-                Your personal code trainer
-            </p>
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="columns">
-
-            {% block content %}
-
-            {% endblock content %}
-
-        </div>
-    </div>
-</body>
+<body>{% block body %}{% endblock body %}</body>
 </html>

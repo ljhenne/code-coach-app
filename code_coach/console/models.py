@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AbstractUser
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
@@ -22,3 +23,7 @@ class ProblemAttempt(models.Model):
     problem_id = models.ForeignKey(Problem, on_delete=models.CASCADE)
     state = models.CharField(max_length=8, choices=STATE_CHOICES, default=CODING)
     user_id = models.UUIDField()
+
+
+class User(AbstractUser):
+    pass
