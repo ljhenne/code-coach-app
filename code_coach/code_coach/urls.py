@@ -19,10 +19,10 @@ from django.urls import include, path
 from console import views
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     path('console/', views.console),
-    path('logout', views.logout),
+    path('logout/', views.logout),
     path('', include('django.contrib.auth.urls')),
     path('', include('social_django.urls')),
 ]
